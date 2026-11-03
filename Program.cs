@@ -29,7 +29,8 @@ builder.Services.AddOpenTelemetry()
         .AddPrometheusExporter()
         .AddAspNetCoreInstrumentation()
         .AddMeter(nameof(Metrics))
-        .AddConsoleExporter());
+        .AddConsoleExporter())
+    .UseOtlpExporter();
 
 builder.Services.AddSingleton<Metrics>();
 
