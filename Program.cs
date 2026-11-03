@@ -16,12 +16,12 @@ builder.Logging.AddOpenTelemetry(options =>
     options
         .SetResourceBuilder(
             ResourceBuilder.CreateDefault()
-                .AddService("TelemetryExample"))
+                .AddService("tm_zueva_novikov_vaschenko"))
         .AddConsoleExporter();
 });
 
 builder.Services.AddOpenTelemetry()
-    .ConfigureResource(resource => resource.AddService("TelemetryExample"))
+    .ConfigureResource(resource => resource.AddService("tm_zueva_novikov_vaschenko"))
     .WithTracing(tracing => tracing
         .AddAspNetCoreInstrumentation()
         .AddConsoleExporter())
